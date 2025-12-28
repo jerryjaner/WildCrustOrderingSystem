@@ -28,15 +28,25 @@ License: For each use you must have a valid license purchased only from above li
     <!--begin::Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700" />
     <!--end::Fonts-->
+     <!-- Dropzone CSS -->
+    <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" />
+    <!-- End Dropzone CSS -->
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <!-- End Font Awesome CSS -->
+    <!-- DataTables CSS -->
+     <link href="{{ asset('admin/assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet"
+        type="text/css" />
+    <!-- End DataTables CSS -->
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
     <link href="{{ asset('admin/assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('admin/assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <!--end::Global Stylesheets Bundle-->
 
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-
-    <link href="{{ asset('admin/assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet"
-        type="text/css" />
+    <!-- Custom Styles -->
+     <link href="{{ asset('admin/assets/css/customstyle.css') }}" rel="stylesheet" type="text/css" />
+     <!-- End Custom Styles -->
+    @stack('styles')
 
 </head>
 <!--end::Head-->
@@ -57,10 +67,8 @@ License: For each use you must have a valid license purchased only from above li
                     <!--begin::Logo-->
                     <div class="aside-logo d-none d-lg-flex flex-column align-items-center flex-column-auto pt-10"
                         id="kt_aside_logo">
-                        <a href="index.html">
-                            {{-- <img alt="Logo" src="admin/assets/media/logos/logo-compact.svg" class="h-55px" /> --}}
+                        <a href="{{ route('admin.dashboard.index') }}">
                             <img alt="Logo" src="{{ asset('admin/assets/media/logos/wildcrust-logo.jpg') }}" class="h-55px" />
-
                         </a>
                     </div>
                     <!--end::Logo-->
@@ -179,11 +187,13 @@ License: For each use you must have a valid license purchased only from above li
     <!--end::Scrolltop-->
 
     {{-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script> --}}
+    <script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script>
     <script src="{{ asset('admin/assets/plugins/global/plugins.bundle.js') }}"></script>
     <script src="{{ asset('admin/assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
     <script src="{{ asset('admin/assets/js/scripts.bundle.js') }}"></script>
     <script src="{{ asset('admin/assets/js/custom/widgets.js') }}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
         $(document).ready(function() {
 

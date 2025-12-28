@@ -1,0 +1,10 @@
+ .dropzone{
+    border: 2px dashed #459ef1 !important;
+    background-color: #f8f9fa !important;
+    border-radius: 10px !important;
+    padding: 20px !important;
+}
+.dropdown-menu .dropdown-item:hover {
+    background-color: #459ef1;
+    color: #fff !important;
+}

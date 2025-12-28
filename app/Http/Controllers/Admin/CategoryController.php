@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Category\CategoryStore;
-use App\Http\Requests\Admin\Category\CategoryUpdate;
+use App\Http\Requests\Admin\Category\CategoryStoreRequest;
+use App\Http\Requests\Admin\Category\CategoryUpdateRequest;
 
 class CategoryController extends Controller
 {
@@ -29,7 +29,7 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CategoryStore $request)
+    public function store(CategoryStoreRequest $request)
     {
         // Validation is already handled by the Store request class
 
@@ -44,6 +44,7 @@ class CategoryController extends Controller
             'message' => 'Category created successfully',
         ]);
     }
+
     /**
      * Display the specified resource records with filtering.
      */
@@ -108,7 +109,7 @@ class CategoryController extends Controller
             return response($output);
         }
 
-        return response('<h1 class="text-center text-black mt-5">No record present in the database!</h1>');
+        return response('<h3 class="text-center text-black mt-5">No record present in the database!</h3>');
     }
 
 
@@ -134,7 +135,7 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(CategoryUpdate $request, string $id)
+    public function update(CategoryUpdateRequest $request, string $id)
     {
         $category = Category::findOrFail($id);
         $category->update($request->validated());

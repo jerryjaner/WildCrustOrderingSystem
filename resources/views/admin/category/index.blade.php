@@ -25,11 +25,11 @@
                         </div>
                         <div class="card-body border-bottom py-4">
                             <div class="row g-4">
-                                <div class="col-md-5 mt-2">
+                                <div class="col-md-6 mt-2">
                                     <input type="text" id="filter_name" class="form-control"
                                         placeholder="Search category name">
                                 </div>
-                                <div class="col-md-5 mt-2">
+                                <div class="col-md-4 mt-2">
                                     <select id="filter_status" class="form-select">
                                         <option value="">All Status</option>
                                         <option value="active">Active</option>
@@ -183,7 +183,7 @@
                                 <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal"
                                     id="edit_close_btn">Close</button>
                                 <button type="submit" class="btn btn-primary btn-sm"
-                                    id="edit_btn_submit">Submit</button>
+                                    id="edit_btn_submit">Update</button>
                             </div>
                         </form>
                     </div>
@@ -396,7 +396,8 @@
                                         Swal.fire({
                                             icon: 'success',
                                             title: 'Category Updated Successfully',
-                                            showConfirmButton: true,
+                                            showConfirmButton: false,
+                                            timer: 3000,
                                         });
                                     }
 
@@ -466,6 +467,8 @@
                         }
                     })
                 });
+
+
             });
         </script>
     @endpush
