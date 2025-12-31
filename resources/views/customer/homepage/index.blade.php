@@ -5,7 +5,6 @@
 @section('contents')
 
 
-@include('layouts.partials.customer.menu')
 
 
 @endsection

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('product_name');
             $table->text('description')->nullable();
             $table->decimal('price', 10, 2);
-            $table->integer('stock')->default(0);
             $table->string('product_image')->nullable();
             $table->enum('status', ['available', 'unavailable'])->default('available');
             $table->timestamps();

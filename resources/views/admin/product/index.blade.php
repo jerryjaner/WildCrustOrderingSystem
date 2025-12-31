@@ -117,13 +117,6 @@
                                     placeholder="Product Price">
                                 <span class="text-danger error-text price_error"></span>
                             </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">Product Stock <span class="text-danger">*</span></label>
-                                <input type="number" class="form-control" min="1" name="stock"
-                                    placeholder="Product Stock">
-                                <span class="text-danger error-text stock_error"></span>
-                            </div>
                             <div class="mb-5">
                                 <label class="form-label">Status <span class="text-danger">*</span></label>
                                 <select class="form-select" name="status">
@@ -211,13 +204,6 @@
                                     placeholder="Product Price" id="view_price" readonly>
                                 <span class="text-danger error-text price_error"></span>
                             </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">Product Stock <span class="text-danger">*</span></label>
-                                <input type="number" class="form-control" min="1" name="stock"
-                                    placeholder="Product Stock" id="view_stock" readonly>
-                                <span class="text-danger error-text stock_error"></span>
-                            </div>
                             <div class="mb-5">
                                 <label class="form-label">Status <span class="text-danger">*</span></label>
                                 <select class="form-select" name="status" id="view_status" disabled>
@@ -288,13 +274,6 @@
                                 <input type="number" class="form-control" min="0.01" step="0.01" name="price"
                                     placeholder="Product Price" id="edit_price">
                                 <span class="text-danger error-text price_error"></span>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">Product Stock <span class="text-danger">*</span></label>
-                                <input type="number" class="form-control" min="1" name="stock"
-                                    placeholder="Product Stock" id="edit_stock">
-                                <span class="text-danger error-text stock_error"></span>
                             </div>
                             <div class="mb-5">
                                 <label class="form-label">Status <span class="text-danger">*</span></label>
@@ -492,7 +471,6 @@
                             $("#view_product_name").val(response.product_name);
                             $("#view_category").val(response.category.category_name);
                             $("#view_price").val(response.price);
-                            $("#view_stock").val(response.stock);
                             $("#view_description").val(response.description);
                             $("#view_status").val(response.status);
                             let imagePath = response.product_image ?
@@ -526,7 +504,6 @@
                             $("#edit_product_name").val(response.product_name);
                             $("#edit_category").val(response.category.id);
                             $("#edit_price").val(response.price);
-                            $("#edit_stock").val(response.stock);
                             $("#edit_description").val(response.description);
                             $("#edit_status").val(response.status);
                             let imagePath = response.product_image ?

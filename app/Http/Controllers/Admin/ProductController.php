@@ -97,7 +97,6 @@ class ProductController extends Controller
                                 <th>Category Name</th>
                                 <th>Description</th>
                                 <th>Price</th>
-                                <th>Stock</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -130,7 +129,6 @@ class ProductController extends Controller
                                 <td>'.$data->category->category_name.'</td>
                                 <td>'.$data->description.'</td>
                                 <td>'.$data->price.'</td>
-                                <td>'.$data->stock.'</td>
                                 <td>'.$status.'</td>
                                 <td>'.$actionDropdown.'</td>
                             </tr>';
