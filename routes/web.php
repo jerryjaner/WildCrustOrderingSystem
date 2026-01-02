@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Customer\CartController;
 use App\Http\Controllers\Customer\HomeController;
@@ -38,6 +39,7 @@ Route::middleware(['auth', 'role:user'])
         Route::get('/payment/process', [PaymentController::class, 'process'])->name('payment.process');
         Route::post('/payment/callback', [PaymentController::class, 'callback'])->name('payment.callback');
 
+
 });
 
 
@@ -52,9 +54,14 @@ Route::middleware(['auth', 'role:admin'])
 
         // Category routes
         Route::get('/categories/record', [CategoryController::class, 'record'])->name('categories.record');
-        Route::resource('categories', CategoryController::class)->except(['create']);
+        Route::resource('/categories', CategoryController::class)->except(['create']);
 
         // Product routes
         Route::get('/products/record', [ProductController::class, 'record'])->name('products.record');
-        Route::resource('products', ProductController::class)->except(['create']);
+        Route::resource('/products', ProductController::class)->except(['create']);
+
+         // Orders  routes
+         Route::get('/orders/{order}/items', [OrderController::class, 'items'])->name('orders.items');
+        Route::get('/orders/record', [OrderController::class, 'record'])->name('orders.record');
+        Route::resource('/orders', OrderController::class)->except(['create']);
 });

@@ -25,12 +25,17 @@ class DatabaseSeeder extends Seeder
 
         // Create a customer user
         User::factory()->create([
-            'name' => 'Customer User',
+            'name' => 'Customer1',
             'email' => 'customer@example.com',
             'password' => bcrypt('password'),
             'role' => 'user',
         ]);
-
+         User::factory()->create([
+            'name' => 'Customer2',
+            'email' => 'customer1@example.com',
+            'password' => bcrypt('password'),
+            'role' => 'user',
+        ]);
         $this->call([
             CategorySeeder::class,
         ]);
